@@ -12,10 +12,16 @@
     <title>WiFind - Mapping WiFi Coverage in NYC</title>
 
     <!-- Scripts for Heatmaps -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="js/index.js"></script>  
+    
+<!--  Replace with these 2 lines for Https 
+    <script src="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css"/>
+-->
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>  
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
+
     
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -25,8 +31,10 @@
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-    <link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    
+    <!-- Delete Http before // for https -->
+    <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -89,20 +97,20 @@
                          <div class="form-group">
                              <label for="SSID"> Network Name: </label>
                              <input type="text" class="form-control" ng-model='params.ssid' placeholder="nyu">
-                         </div>
-                         <div class="form-group">
+                          </div>
+                          <div class="form-group">
                              <label for="aggregation">Aggregation Function:</label>
                              <select name="aggregation" class="form-control" ng-model="params.aggregation">
                                  <option value="median" selected="selected">Median</option>
                                  <option value="mean">Mean</option>
                                  <option value="max">Max</option>
                              </select>
-                         </div>
+                           </div>
                          <button class="btn btn-default" ng-click="execute()">Show Data</button>
-                    </form>
-                    <img src="img/legend.png" class="img-fluid" width="100%">
-                    <figcaption class="figure-caption">Signal Intensity (dB)</figcaption>      
-                 </div>
+                        </form>
+                        <img src="img/legend.png" class="img-fluid" width="100%">
+                        <figcaption class="figure-caption">Signal Intensity (dB)</figcaption>      
+                    </div>
                 </div>   
             </div>
         </div>
